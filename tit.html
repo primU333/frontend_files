@@ -1,0 +1,52 @@
+Copy code
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Post</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Create New Post</h1>
+      <form id="new-post-form" onsubmit="submitForm(); return false;">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="post">Post</label>
+          <textarea class="form-control" id="post" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <script>
+      function submitForm() {
+        // get form data
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var post = document.getElementById("post").value;
+
+        // create new blog post object
+        var newPost = {
+          name: name,
+          email: email,
+          post: post
+        };
+
+        // send blog post to server (assuming you have a server-side script to handle this)
+        // ...
+
+        // redirect to thank you page
+        window.location.href = "succefuly.html";
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

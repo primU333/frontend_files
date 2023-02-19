@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Blog Post</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">My Blog</a>
+    </nav>
+    <div class="container mt-3">
+      <h1>New Blog Post</h1>
+      <form id="newPostForm">
+        <div class="form-group">
+          <label for="postTitle">Title</label>
+          <input type="text" class="form-control" id="postTitle" name="postTitle">
+        </div>
+        <div class="form-group">
+          <label for="postContent">Content</label>
+          <textarea class="form-control" id="postContent" name="postContent" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+
+        // Define the Firebase database
+        var config = {
+          // Firebase configuration details go here
+        };
+        firebase.initializeApp(config);
+        var database = firebase.database();
+
+        // Get the blog posts from the database
+        database.ref('posts').on('child_added', function(data) {
+          var post = data.val();
+          var postHtml = `
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">${post.title}</h5>
+                <p class="card-text">${post.content}</p>
+              </div>
+            </div>
+          `;
+          $('#blogPosts').prepend(postHtml);
+        });
+
+        // Handle form submission
+        $('#newPostForm').submit(function(event) {
+          event.preventDefault();
+          var title = $('#postTitle').val();
+          var content = $('#postContent').val();
+          var postData = {
+            title: title,
+            content: content
+          };
+          database.ref('posts').push(postData);
+          $('#newPostForm')[0].reset();
+        });
+
+      });
+    </script>
+  </body>
+</html>

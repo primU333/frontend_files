@@ -1,0 +1,81 @@
+<!-- Event Page -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Page</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Custom CSS -->
+	<style type="text/css">
+		.event-image {
+			max-width: 100%;
+			height: auto;
+		}
+		.event-card {
+			margin-bottom: 20px;
+		}
+		.add-event-form {
+			margin-top: 20px;
+			display: none;
+		}
+		.btn-success {
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="#">My Events</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Home</a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Events</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+
+	<!-- Main Content -->
+	<div class="container">
+		<!-- Event Cards -->
+		<div class="row" id="event-cards">
+			<!-- Sample Event Card -->
+			<div class="col-lg-4 col-md-6">
+				<div class="card event-card">
+				  <img class="card-img-top event-image" src="https://via.placeholder.com/350x200.png" alt="Sample Event">
+				  <div class="card-body">
+				    <h5 class="card-title">Sample Event</h5>
+				    <p class="card-text">This is a sample event description.</p>
+				    <a href="#" class="btn btn-primary">View Details</a>
+				  </div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Add Event Button -->
+		<button class="btn btn-success" id="add-event-button">Add Event</button>
+
+		<!-- Add Event Form -->
+		<form id="add-event-form" class="add-event-form">
+			<h3>Add Event</h3>
+			<div class="form-group">
+				<label for="event-name">Event Name</label>
+				<input type="text" class="form-control" id="event-name" placeholder="Enter event name">
+			</div>
+			<div class="form-group">
+				<label for="event-description">Event Description</label>
+				<textarea class="form-control" id="event-description" rows="3"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="event-date">Event Date</label>
+				<input type="date" class="form-control" id="event-date">
+			</div></form></div></body></html>
+		

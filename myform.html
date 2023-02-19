@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Search</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+  <style>
+    label {
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    select, input {
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-3">
+      <form id="search-form">
+        <div class="mb-3" id="search-results">
+          <label for="movieType" class="form-label">Movie Type</label>
+          <select class="form-select" id="movieType">
+            <option selected>Choose...</option>
+            <option value="movie">Movie</option>
+            <option value="tv-show">TV Show</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="genre" class="form-label">Genre</label>
+          <select class="form-select" id="genre">
+            <option selected>Choose...</option>
+            <option value="drama">Drama</option>
+            <option value="action">Action</option>
+            <option value="thriller">Thriller</option>
+            <option value="comedy">Comedy</option>
+            <option value="horror">Horror</option>
+            <option value="sci-fi">Science Fiction</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="releasedDate" class="form-label">Released Date</label>
+          <input type="date" class="form-control" id="releasedDate">
+        </div>
+        <div class="mb-3">
+          <label for="userRating" class="form-label">User Rating</label>
+          <select class="form-select" id="userRating">
+            <option selected>Choose...</option>
+            <option value="1">1 star</option>
+            <option value="2">2 stars</option>
+            <option value="3">3 stars</option>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="runTime" class="form-label">Run Time (in minutes)</label>
+          <input type="number" class="form-control" id="runTime">
+        </div>
+        <div class="mb-3">
+          <label for="country" class="form-label">Country</label>
+          <select class="form-select" id="country">
+            <option selected>Choose...</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="Japan">Japan</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="language" class="form-label">Language</label>
+          <select class="form-select" id="language" multiple>
+            <option selected  >Choose...</option>
+        <option value="english">English</option>
+        <option value="spanish">Spanish</option>
+        <option value="french">French</option>
+        <option value="german">German</option>
+        <option value="japanese">Japanese</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+    <button type="reset" class="btn btn-secondary">Reset Filters</button>
+  </form>
+</div>
+<div class="col-lg-9">
+  <div class="row">
+    <!-- Search results go here -->
+  </div>
+</div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+</body>
+<script type="text/javascript">
+  $(function() {
+  // Bind a submit event to the form
+  $('#search-form').on('submit', function(e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Get the form values
+    var movieType = $('#movie-type').val();
+    var genre = $('#genre').val();
+    var releasedDate = $('#released-date').val();
+    var userRating = $('#user-rating').val();
+    var runTime = $('#run-time').val();
+    var country = $('#country').val();
+    var language = $('#language').val();
+
+    // You can perform an AJAX request here to fetch the search results
+    // and then display them on the right side of the page.
+    // For now, we'll just display a sample message.
+
+    var searchResult = 'Showing search results for: <br>';
+    searchResult += 'Movie Type: ' + movieType + '<br>';
+    searchResult += 'Genre: ' + genre + '<br>';
+    searchResult += 'Released Date: ' + releasedDate + '<br>';
+    searchResult += 'User Rating: ' + userRating + '<br>';
+    searchResult += 'Run Time: ' + runTime + '<br>';
+    searchResult += 'Country: ' + country + '<br>';
+    searchResult += 'Language: ' + language;
+
+    $('#search-results').html(searchResult); // Update the search results section
+  });
+
+  // Bind a click event to the reset button
+  $('#reset-filters').on('click', function(e) {
+    $('#search-form')[0].reset(); // Reset the form
+    $('#search-results').html(''); // Clear the search results section
+  });
+});
+</script>
+</html>

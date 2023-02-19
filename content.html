@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap 5 Containers Example</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+	<div class="container">
+  <h2>Movie Uploader</h2>
+  <form>
+    <div class="form-group">
+      <label for="movie-type">Movie Type:</label>
+      <select class="form-control" id="movie-type">
+        <option>Action</option>
+        <option>Adventure</option>
+        <option>Comedy</option>
+        <option>Drama</option>
+        <option>Horror</option>
+        <option>Science Fiction</option>
+        <option>Thriller</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre:</label>
+      <select class="form-control" id="genre">
+        <option>Action</option>
+        <option>Adventure</option>
+        <option>Comedy</option>
+        <option>Drama</option>
+        <option>Horror</option>
+        <option>Science Fiction</option>
+        <option>Thriller</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="release-date">Release Date:</label>
+      <input type="date" class="form-control" id="release-date">
+    </div>
+    <div class="form-group">
+      <label for="user-rating">User Rating:</label>
+      <input type="number" class="form-control" id="user-rating" step="0.1" min="0" max="10">
+    </div>
+    <div class="form-group">
+      <label for="runtime">Runtime (minutes):</label>
+      <input type="number" class="form-control" id="runtime" min="0">
+    </div>
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <input type="text" class="form-control" id="country">
+    </div>
+    <div class="form-group">
+      <label for="language">Language:</label>
+      <select class="form-control" id="language" multiple>
+        <option>English</option>
+        <option>Spanish</option>
+        <option>French</option>
+        <option>German</option>
+        <option>Italian</option>
+      </select>
+    </div>
+    <button type="reset" class="btn btn-primary">Reset Filters</button>
+  </form>
+</div>
+
+	<style>
+		/* Custom styles for containers */
+		.movies-container {
+			background-color: #f5f5f5;
+			padding: 20px;
+		}
+
+		.series-container {
+			background-color: #e6e6e6;
+			padding: 30px;
+		}
+
+		.advert-container {
+			background-color: #d9d9d9;
+			padding: 40px;
+		}
+
+		.jobs-container {
+			background-color: #cccccc;
+			padding: 50px;
+		}
+
+		.trading-container {
+			background-color: #b3b3b3;
+			padding: 60px;
+		}
+
+		.trading-series-container {
+			background-color: #999999;
+			padding: 70px;
+		}
+
+		.blogs-container {
+			background-color: #808080;
+			padding: 80px;
+		}
+
+		.premieres-container {
+			background-color: #666666;
+			padding: 90px;
+		}
+
+		.events-container {
+			background-color: #4d4d4d;
+			padding: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container movies-container">
+		<h2>Movies</h2>
+		<p>Movie content goes here...</p>
+	</div>
+
+	<div class="container series-container">
+		<h2>Series</h2>
+		<p>Series content goes here...</p>
+	</div>
+
+	<div class="container advert-container">
+		<h2>Adverts</h2>
+		<p>Advert content goes here...</p>
+	</div>
+
+	<div class="container jobs-container">
+		<h2>Jobs</h2>
+		<p>Job content goes here...</p>
+	</div>
+
+	<div class="container trading-container">
+		<h2>Most Trading</h2>
+		<p>Most trading content goes here...</p>
+	</div>
+
+	<div class="container trading-series-container">
+		<h2>Most Trading Series</h2>
+		<p>Most trading series content goes here...</p>
+	</div>
+
+	<div class="container blogs-container">
+		<h2>Popular Blogs</h2>
+		<p>Popular blog content goes here...</p>
+	</div>
+
+	<div class="container premieres-container">
+		<h2>Film Premieres</h2>
+		<p>Film premiere content goes here...</p>
+	</div>
+
+	<div class="container events-container">
+		<h2>Upcoming Events</h2>
+		<p>Upcoming event content goes here...</p>
+	</div>
+	<div class="container news-container">
+	<h2>Latest News</h2>
+	<ul>
+		<li>
+			<div class="news-item">
+				<h3>Article Title 1</h3>
+				<p>Article content goes here...</p>
+				<a href="#">Read More</a>
+			</div>
+		</li>
+		<li>
+			<div class="news-item">
+				<h3>Article Title 2</h3>
+				<p>Article content goes here...</p>
+				<a href="#">Read More</a>
+			</div>
+		</li>
+		<li>
+			<div class="news-item">
+				<h3>Article Title 3</h3>
+				<p>Article content goes here...</p>
+				<a href="#">Read More</a>
+			</div>
+		</li>
+	</ul>
+</div>
+
+
+
+
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
